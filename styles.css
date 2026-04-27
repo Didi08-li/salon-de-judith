@@ -1,0 +1,124 @@
+/* Basic reset and typography */
+* { box-sizing: border-box; }
+html,body{ margin:0; padding:0; font-family: 'Montserrat', sans-serif; color:#333; background:#fff; }
+.container{ max-width:1200px; margin:0 auto; padding:0 20px; }
+
+/* Header */
+.site-header{ background:#fff; border-bottom:1px solid #eee; }
+.header-inner{ display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo{ width:64px; height:64px; object-fit:cover; border-radius:8px; }
+.brand h1{ font-size:1.1rem; margin:0; color:#7c3aed; }
+.main-nav a{ margin-left:16px; color:#333; text-decoration:none; font-weight:600; }
+
+/* Skip link (accessible focus) */
+.skip-link{ position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden; }
+.skip-link:focus{ position:static; left:0; top:16px; background:#fff; color:#000; padding:8px 12px; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.12); z-index:1000; }
+
+/* Nav toggle (mobile) */
+.nav-toggle{ display:none; background:none; border:0; padding:8px; cursor:pointer; }
+.nav-toggle .hamburger{ display:block; width:26px; height:2px; background:#333; position:relative; }
+.nav-toggle .hamburger::before, .nav-toggle .hamburger::after{ content:''; position:absolute; left:0; width:26px; height:2px; background:#333; }
+.nav-toggle .hamburger::before{ top:-8px; }
+.nav-toggle .hamburger::after{ top:8px; }
+
+/* Focus styles */
+a:focus, button:focus{ outline:3px solid rgba(124,58,237,0.18); outline-offset:3px; }
+
+/* Hero */
+.hero{ background:linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url("image/Tresse africaine.jpg") center/cover no-repeat; color:#fff; padding:80px 0; text-align:center; }
+.hero-title{ font-size:2rem; margin-bottom:12px; }
+.hero-sub{ font-size:1rem; margin-bottom:18px; }
+.btn{ display:inline-block; padding:12px 22px; border-radius:8px; text-decoration:none; }
+.btn.primary{ background:#7c3aed; color:#fff; font-weight:700; }
+
+/* Sections */
+section{ padding:60px 0; }
+section h2{ text-align:center; margin-bottom:30px; color:#7c3aed; }
+
+/* Services */
+.services .cards{ display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+.services .card{ background:#fff; padding:20px; border-radius:10px; width:260px; box-shadow:0 6px 18px rgba(0,0,0,0.06); text-align:center; }
+.services .card h3{ margin-bottom:8px; }
+.services .card a{ color:#7c3aed; text-decoration:none; font-weight:700; display:inline-block; margin-top:10px; }
+
+/* Gallery */
+.gallery-grid{ display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
+.gallery-grid img{ width:300px; height:200px; object-fit:cover; border-radius:8px; }
+
+/* Team */
+.team-grid{ display:flex; gap:20px; justify-content:center; flex-wrap:wrap; }
+.team .member{ width:200px; text-align:center; }
+.team img{ width:100%; height:200px; object-fit:cover; border-radius:8px; }
+
+/* Booking form styles */
+.booking-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.success-message {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Contact */
+.contact p{ margin:6px 0; }
+
+/* Footer */
+.site-footer{ background:#fafafa; border-top:1px solid #eee; padding:18px 0; text-align:center; }
+
+/* Responsive */
+@media(max-width:900px){
+  .main-nav{ display:none; }
+  .nav-toggle{ display:inline-block; }
+  .main-nav.active{ display:block; position:absolute; right:20px; top:70px; background:#fff; border:1px solid #eee; border-radius:8px; padding:12px; box-shadow:0 8px 30px rgba(0,0,0,0.08); }
+  .main-nav a{ display:block; margin:6px 0; }
+  .hero-title{ font-size:1.6rem; }
+  .gallery-grid img{ width:90%; height:auto; }
+  .team-grid, .services .cards{ flex-direction:column; align-items:center; }
+}
+
+@media(max-width:480px){
+  .logo{ width:48px; height:48px; }
+  .hero{ padding:50px 0; }
+}
